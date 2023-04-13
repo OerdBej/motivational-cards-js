@@ -61,3 +61,33 @@ body {
     position: relative;
     transition: flex 1.1s ease-in;
 }
+
+/* tricks: opacity to 0 to not display any text until active class is ON */
+.panel h3 {
+    position: absolute;
+    font-size: 20px;
+    bottom: 20px;
+    left: 20px;
+    opacity: 0;
+}
+
+.panel.active {
+    flex: 5;
+}
+
+.panel.active h3 {
+    opacity: 1;
+}
+
+/* screen small show 2 cards: selecting only the last 2 */
+
+@media (max-width: 650px) {
+    .container {
+        width: 100vw;
+    }
+
+    .panel:nth-child(4),
+    .panel:nth-child(5) {
+        display: none;
+    }
+}
